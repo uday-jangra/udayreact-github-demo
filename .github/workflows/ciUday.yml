@@ -22,7 +22,7 @@ jobs:
         run: cd uday-react-project && npm i
       # Runs all the tests
       - name: Run tests
-        run: npm test
+        run: cd uday-react-project && npm test
       # Builds the project
       - name: Build Project
-        run: npm run build
+        run: cd uday-react-project && npm run build
