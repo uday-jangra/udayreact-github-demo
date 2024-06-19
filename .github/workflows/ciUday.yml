@@ -1,0 +1,28 @@
+name: Uday React project
+on:
+  push:
+    branches:
+      - main
+jobs:
+  test-and-build:
+    # Uses the latest Ubuntu runner
+    runs-on: ubuntu-latest
+    steps:
+      # Checksout the repository
+      - name: Checkout Repository
+        uses: actions/checkout@v3
+      # Installs Node JS
+      - name: Install NodeJS
+        uses: actions/setup-node@v3
+        with:
+          # Define Node Vesion
+          node-version: 18
+      # Change to directory and Install project dependencies
+      - name: Install dependancies
+        run: cd uday-react-project && npm i
+      # Runs all the tests
+      - name: Run tests
+        run: npm test
+      # Builds the project
+      - name: Build Project
+        run: npm run build
